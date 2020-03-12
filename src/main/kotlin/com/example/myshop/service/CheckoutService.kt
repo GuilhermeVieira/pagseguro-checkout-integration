@@ -15,17 +15,20 @@ class CheckoutService(
 
     fun processNewCheckout(checkout: Checkout): String? {
         val checkoutResponse = checkoutClient.getCheckoutCode(checkout)
+
         if (checkoutResponse.badRequest != null) {
             val error: String = "Bad request! Code: " + checkoutResponse.badRequest.errors?.code_error + " Error: " + checkoutResponse.badRequest.errors?.message
             logger.error(error)
 
             return error
-        } else {
+        } else if (checkoutResponse.code != null) {
             logger.info("Checkout accepted")
             checkout.checkoutResponse = checkoutResponse
             checkoutRepository.save(checkout)
 
             return "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" + checkout.checkoutResponse?.code
+        } else {
+            return "Something went wrong"
         }
     }
 
