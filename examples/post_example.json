@@ -1,0 +1,51 @@
+{
+	"sender": {
+		"name": "Jose Comprador Luiga",
+		"email": "comprador@uol.com.br",
+		"phone": {
+			"area_code": "99",
+			"number": "99999999"
+		},
+		"document": [{
+						"type": "CPF",
+						"value": "11475714734"
+					}
+				]
+	},
+	"currency": "BRL",
+	"item": [
+			{
+				"id": "0001",
+				"description": "Produto PagSeguro I",
+				"amount": "92999.99",
+				"quantity": "1",
+				"weight": "10",
+				"shipping_cost": "1.00"
+			}
+		],
+	"redirect_URL": "http://lojamodelo.com.br/return.html",
+	"extra_amount": "10.00",
+	"reference": "REF1234",
+	"shipping": {
+		"address": {
+			"street": "Av. PagSeguro",
+			"number": "9999",
+			"complement": "99o andar",
+			"district": "Jardim Internet",
+			"city": "Cidade Exemplo",
+			"state": "SP",
+			"country": "BRA",
+			"postal_code": "99999999"
+		},
+		"type": "1",
+		"cost": "1.00",
+		"address_required": "String"
+	},
+	"timeout": "25",
+	"max_age": "999999999",
+	"max_users": "999",
+	"receiver": {
+		"email": "suporte@lojamodelo.com.br"
+	},
+	"enable_recover": "false"
+}
